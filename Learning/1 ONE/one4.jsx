@@ -6,6 +6,8 @@
 // then we wanna create a react app
 //     to install run these command
 
+// install npm
+
 // npx create-react-app (name)
-// cd tutorial
-// npm start
+// cd "path"
+// npm start to start it
