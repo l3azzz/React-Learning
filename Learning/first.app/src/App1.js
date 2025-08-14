@@ -5,10 +5,17 @@
 // // we call this bcuz there are class based function
 
 import React from "react";
+
 class App extends React.Component {
   render() {
-    // render function is used to render thing it ihas the responsibilty of that
-    <h1>Hello World</h1>;
+    // The render function is responsible for rendering JSX.
+    return (
+      <ul>
+        <li>
+          this is the first app1.js <hr />
+        </li>
+      </ul>
+    );
   }
 }
 
