@@ -5,7 +5,7 @@
 // component first name should be caps
 
 import React from "react";
-import Screen from "./Components/Screens/screen.js"; // it is been now importe dnow to use this
+import Screen from "./Components/screen.js"; // it is been now importe dnow to use this
 class App extends React.Component {
   render() {
     return (
