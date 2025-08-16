@@ -1,0 +1,130 @@
+header {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+div.to-do-item {
+  width: 80%;
+  margin: 3.5% 5% 0 5%;
+}
+div.done-item {
+  width: 80%;
+  margin: 0 5% 0 5%;
+}
+div.to-do-item li,
+div.done-item li {
+  transition: all 0.25s;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  width: 100%;
+  background: #ffffff59;
+  border-radius: 5px;
+  color: white;
+}
+div.done-item li {
+  background: rgb(41, 41, 41);
+  text-decoration: line-through;
+}
+
+div.to-do-item li:hover h3,
+div.done-item li:hover h3 {
+  margin-left: 30px;
+}
+
+div.to-do-item li:hover,
+div.done-item li:hover {
+  background: #ffffff8f;
+  margin-left: 20px;
+  /* position: relative;
+  
+  left: 30px; */
+  /* box-shadow: 10px 13px 15 px 18px white; */
+}
+div.to-do-item li:active,
+div.done-item li:active {
+  color: black;
+  background: #ffffff;
+  margin-left: 0px;
+}
+div.to-do-item div.delete,
+div.done-item div.delete {
+  justify-self: flex-end !important;
+  align-self: flex-end !important;
+}
+h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+}
+div.add-input {
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 90%;
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  align-self: center;
+  justify-self: center;
+  outline: none;
+}
+input:active,
+input:hover,
+input:checked {
+  width: 90%;
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.897);
+}
+button {
+  border: 1px solid rgb(0, 0, 0);
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+  width: 10%;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-size: 15px;
+  background: rgb(255, 255, 255);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+}
+button:hover {
+  background: rgba(255, 255, 255, 0.685);
+  transition: 0.2s;
+  border: 1px solid rgb(0, 0, 0);
+}
+button:active {
+  background: rgba(0, 0, 0, 0.493);
+  color: white;
+}
+
+section#main {
+  border: 3px solid rgb(255, 255, 255);
+  margin: 0 5% 0 5%;
+  border-radius: 10px;
+}
+body {
+  background: rgba(0, 0, 0, 0.726);
+}
