@@ -128,3 +128,24 @@ section#main {
 body {
   background: rgba(0, 0, 0, 0.726);
 }
+
+/* Icon images for delete, click, and revert: set fixed size and vertical alignment */
+div.to-do-item li img,
+div.done-item li img,
+div.to-do-item div.delete img,
+div.done-item div.delete img,
+div.done-item div.revert-btn img,
+div.to-do-item div.chk img {
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+  margin: 0 2px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Optionally tweak list item alignment if needed */
+div.to-do-item li,
+div.done-item li {
+  align-items: center;
+}
