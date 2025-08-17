@@ -1,7 +1,7 @@
 // adapting based on propss
 
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 class App extends React.Component {
   render() {
     return (

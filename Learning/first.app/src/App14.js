@@ -3,7 +3,7 @@
 // FOR OVER IN STLED COMPONENT ELARYER
 // WE USE  &:hover {custom styles}
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 class App extends React.Component {
   render() {
     return (
