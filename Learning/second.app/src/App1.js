@@ -1,13 +1,14 @@
+// USESTATE WITH ARRAY
+
 import React from "react";
+import Usestatewitharray from "./Components/usestatewitharray";
 class App extends React.Component {
   render() {
     return (
       <>
-        <ul>
-          <li>
-            this is the first app1.js <hr />
-          </li>
-        </ul>
+        <Usestatewitharray />
+        <h4>This is app1.js ________ USESTATE WITH ARRAY</h4>
+        <hr />
       </>
     );
   }
