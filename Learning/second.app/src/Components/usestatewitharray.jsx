@@ -48,6 +48,7 @@ function Usestatewitharray() {
       </ul>
       {/* functionalities ================= */}
       <input
+        className="textInputWrapper"
         value={input}
         onChange={(eventtracker) => {
           setInput(eventtracker.target.value);

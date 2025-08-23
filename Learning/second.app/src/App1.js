@@ -1,6 +1,7 @@
 // USESTATE WITH ARRAY
 
 import React from "react";
+import "./index.css";
 import Usestatewitharray from "./Components/usestatewitharray";
 class App extends React.Component {
   render() {
