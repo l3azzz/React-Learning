@@ -10,14 +10,96 @@ function ToDo_Component() {
     } else {
       setTask([
         ...task,
-        { task_name: input, id: task.length, is_completed: false },
+        { task_name: input, id: task.length + 1, is_completed: false },
       ]);
     }
     setInput("");
     // finsih
   };
-  // console.log(task);
-  // .addEventListener("clicked", () => console.log(task));
+
+  const changestate = (identity) => {
+    setTask((state) =>
+      state.map((task) =>
+        task.id === identity ? { ...task, is_completed: true } : task
+      )
+    );
+  };
+
+  const deleteItem = (identity) => {
+    setTask((task_main) => task_main.filter((task) => task.id !== identity));
+  };
+
+  const revertitem = (identity) => {
+    setTask((state) =>
+      state.map((task) =>
+        task.id === identity ? { ...task, is_completed: false } : task
+      )
+    );
+  };
+
+  const renderitem_top = () => {
+    return (
+      <>
+        {task
+          .filter((task) => task.is_completed === false)
+          .map((task) => {
+            return (
+              <li key={task.id}>
+                <span
+                  className="chkbox"
+                  onClick={() => changestate(task.id)}
+                ></span>
+                <span>
+                  {task.id + ", "}
+                  {task.task_name}
+                </span>
+                <span className="delete" onClick={() => deleteItem(task.id)}>
+                  <img
+                    style={{ height: "31px" }}
+                    src={require("../delete.svg").default}
+                    alt="del icon"
+                  />
+                </span>
+              </li>
+            );
+          })}
+      </>
+    );
+  };
+  const renderitem_bottom = () => {
+    return (
+      <>
+        {task
+          .filter((task) => task.is_completed === true)
+          .map((task) => {
+            return (
+              <li key={task.id}>
+                <span className="chkbox done"></span>
+
+                <span className="task-done">
+                  {task.id + ", "}
+                  {task.task_name}
+                </span>
+                <span className="delete" onClick={() => deleteItem(task.id)}>
+                  <img
+                    style={{ height: "31px" }}
+                    src={require("../delete.svg").default}
+                    alt="del icon"
+                  />
+                </span>
+                <span className="revert" onClick={() => revertitem(task.id)}>
+                  <img
+                    style={{ height: "31px" }}
+                    src={require("../revert.svg").default}
+                    alt="del icon"
+                  />
+                </span>
+              </li>
+            );
+          })}
+      </>
+    );
+  };
 
   return (
     <div className="App">
@@ -26,36 +108,7 @@ function ToDo_Component() {
       </header>
       <section className="todo-body">
         <h2>Things to be done</h2>
-        <ul className="to-do-list">
-          <li>
-            <span className="chkbox"></span>
-            <span>1, Buy 1 kg Tomato</span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-          <li>
-            <span className="chkbox"></span>
-            <span>2, Buy 2kg Onion</span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-          <li>
-            <span className="chkbox"></span>
-            <span>3, Visit friend</span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-          <li>
-            <span className="chkbox"></span>
-            <span>4, Clean House</span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-        </ul>
+        <ul className="to-do-list">{renderitem_top()}</ul>
         <div className="add-task-row">
           <input
             type="text"
@@ -69,48 +122,7 @@ function ToDo_Component() {
           </button>
         </div>
         <h2>Completed</h2>
-        <ul className="done-list">
-          <li>
-            <span className="chkbox done"></span>
-            <span className="task-done">5, Washing Clothes</span>
-            <span className="revert">
-              <i className="fas fa-undo"></i>
-            </span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-          <li>
-            <span className="chkbox done"></span>
-            <span className="task-done">6, Play Cricket</span>
-            <span className="revert">
-              <i className="fas fa-undo"></i>
-            </span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-          <li>
-            <span className="chkbox done"></span>
-            <span className="task-done">7, 1 km Walking</span>
-            <span className="revert">
-              <i className="fas fa-undo"></i>
-            </span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-          <li>
-            <span className="chkbox done"></span>
-            <span className="task-done">8, Do Homework</span>
-            <span className="revert">
-              <i className="fas fa-undo"></i>
-            </span>
-            <span className="delete">
-              <i className="fas fa-trash"></i>
-            </span>
-          </li>
-        </ul>
+        <ul className="done-list">{renderitem_bottom()}</ul>
       </section>
     </div>
   );

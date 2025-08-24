@@ -252,7 +252,7 @@ h2 {
   }
 }
 
-.delete {
+span.delete {
   margin-left: auto;
   color: #800000;
   font-size: 20px;
@@ -275,10 +275,14 @@ h2 {
 
 /* For the done list, both icons should be on the right */
 .done-list li .revert {
-  margin-left: auto;
-  margin-right: 8px;
+  /* margin-left: auto; */
+  /* margin-right: 0; */
+  margin: 0;
 }
 
-.done-list li .delete {
-  margin-left: 0;
+.done-list li span.delete {
+  /* justify-self: flex-end !important;
+  align-self: flex-end !important; */
+  /* margin-right: auto; */
+  /* padding-right: ; */
 }
