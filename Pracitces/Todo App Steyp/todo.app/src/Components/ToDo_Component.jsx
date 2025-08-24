@@ -10,7 +10,12 @@ function ToDo_Component() {
     } else {
       setTask([
         ...task,
-        { task_name: input, id: task.length + 1, is_completed: false },
+        {
+          task_name: input,
+          id: task.length + 1,
+          is_completed: false,
+          is_deleted: false,
+        },
       ]);
     }
     setInput("");
@@ -26,7 +31,12 @@ function ToDo_Component() {
   };
 
   const deleteItem = (identity) => {
-    setTask((task_main) => task_main.filter((task) => task.id !== identity));
+    // setTask((task_main) => task_main.filter((task) => task.id !== identity));
+    setTask((state) =>
+      state.map((task) =>
+        task.id === identity ? { ...task, is_deleted: true } : task
+      )
+    );
   };
 
   const revertitem = (identity) => {
@@ -41,7 +51,9 @@ function ToDo_Component() {
     return (
       <>
         {task
-          .filter((task) => task.is_completed === false)
+          .filter(
+            (task) => task.is_completed === false && task.is_deleted === false
+          )
           .map((task) => {
             return (
               <li key={task.id}>
@@ -70,7 +82,9 @@ function ToDo_Component() {
     return (
       <>
         {task
-          .filter((task) => task.is_completed === true)
+          .filter(
+            (task) => task.is_completed === true && task.is_deleted === false
+          )
           .map((task) => {
             return (
               <li key={task.id}>
