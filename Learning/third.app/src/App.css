@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+section.header {
+  height: 16vh;
+  background: #0f5fff;
+}
+h1 {
+  color: red;
+}
+section.header ul {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+}
