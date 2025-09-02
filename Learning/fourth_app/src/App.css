@@ -36,71 +36,72 @@
     transform: rotate(360deg);
   }
 }
+/* Header Nav Start */
 
-section.header {
-  height: 16vh;
-  background: #0f5fff;
-}
-h1 {
-  color: red;
-}
-section.header ul {
-  display: flex;
-  width: 40%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* appp */
-section.main {
-  width: 93vw;
-  height: 80vh;
-  padding: 10px;
-  margin: auto;
-  border: 2px solid rgba(0, 0, 0, 0.326);
-  border-radius: 15px;
-}
 header {
-  width: 90%;
-  height: 5vh;
-  border-radius: 15px;
-  border: 3px solid black;
-  margin: auto;
-  padding: 30px;
+  padding: 0 5%;
+  margin-bottom: 3vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(201, 103, 16, 0.823);
 }
-
-div.right {
-  width: 45%;
+header h1 {
+  font-size: 50px;
+  font-weight: 700;
 }
-
 header ul {
+  width: 40%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 500;
 }
-header li,
-a {
-  list-style: none;
-  text-decoration: none;
-}
-
-header li:active {
-  text-decoration: underline;
-}
-
-div.body ul {
-  width: 30%;
-  display: flex;
-  /* justify-content: flex-start; */
-  justify-content: space-between;
-  align-items: center;
+header ul li {
   list-style-type: none;
+
+  font-size: 18px;
   font-weight: 500;
 }
-div.body li {
+header ul li a {
+  text-decoration: none;
   color: black;
+  animation: 1s;
 }
+header ul li a:hover {
+  text-decoration: none;
+  /* color: rgb(168, 255, 6); */
+  font-size: 20px;
+  /* text-decoration: underline; */
+}
+header ul li a:active {
+  text-decoration: none;
+  /* color: rgb(255, 0, 0); */
+}
+
+/* Header Nav End */
+
+/* PRODUCT NAV START */
+
+ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul li {
+  list-style-type: none;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+ul li a {
+  text-decoration: none;
+  color: black;
+  animation: 1s;
+}
+ul li a.active {
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 17px;
+}
+/* PRODUCT NAV END */

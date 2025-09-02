@@ -17,6 +17,12 @@ export default function Nav() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <Link to="/one">One</Link>
+          </li>
+          <li>
+            <Link to="/two">two</Link>
+          </li>
         </ul>
       </nav>
     </section>
