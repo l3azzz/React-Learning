@@ -36,3 +36,14 @@ function App() {
 }
 
 export default App;
+
+// wha tis react helmet
+// when sweitching pages the header title is same a react app to change based on pages
+// we use react helemet
+// to install that
+
+// use params
+//  /student:studentid the thing after : is a param that welcomes any params
+//  to use we use import useParams
+
+// USE SERACH PAARAMS
